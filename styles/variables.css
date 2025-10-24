@@ -13,6 +13,10 @@
   --text-color: #000000;
   --bg-color: #ffffff;
   
+  /* Цвета для анимации */
+  --contour-color: var(--text-color);
+  --animation-fill-color: #ff0000;
+  
   /* Градиент для фона */
   --bg-gradient: 
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),

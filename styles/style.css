@@ -177,31 +177,24 @@
   display: grid;
   align-items: end;
   min-block-size: var(--button-min-height);
-  border: none;
+  border: var(--border-width) solid transparent;
   padding: 0;
   background-color: transparent;
   cursor: pointer;
-  z-index: 1;
+  transition: border-color 0.3s ease;
 }
 
 .card__icon-button:focus {
   outline: none;
 }
 
-.card__icon-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  outline: var(--border-width) solid var(--text-color);
-  outline-offset: calc(-1 * var(--border-width));
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: -1;
+.card__icon-button:focus-visible {
+  border-color: var(--text-color);
 }
 
-.card__icon-button:focus-within::before {
-  opacity: 100;
-  z-index: 0;
+/* Like icon */
+.sparks {
+  opacity: 0;
 }
 
 .card__like-button {
@@ -223,6 +216,7 @@
   background: var(--bg-color);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .footer__button {
@@ -242,61 +236,33 @@
   position: absolute;
   inset-block-start: 0;
   inset-inline-start: 0;
-  inline-size: 0%;
+  inline-size: 100%;
   block-size: 100%;
   background-color: var(--text-color);
-  transition: inline-size 0.5s ease-in-out;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::before {
-  inline-size: 100%;
+  transform: translateX(0);
 }
 
 .button__text {
+  position: relative;
+  z-index: 1;
   font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
-  color: var(--text-color);
-}
-
-.button .button__text {
-  transition: color 0.5s ease-in-out;
-}
-
-.button:hover .button__text {
   color: var(--bg-color);
+  mix-blend-mode: difference;
 }
 
 .button svg {
-  transition: color 0.5s ease-in-out;
-}
-
-.button:hover svg {
+  position: relative;
+  z-index: 1;
   color: var(--bg-color);
-}
-
-@supports (mix-blend-mode: difference) {
-  .button .button__text {
-    transition: none;
-  }
-
-  .button svg {
-    transition: none;
-    mix-blend-mode: difference;
-  }
-
-  .button:hover .button__text {
-    color: var(--text-color);
-  }
-
-  .button:hover svg {
-    color: var(--text-color);
-  }
-
-  .button__text {
-    mix-blend-mode: difference;
-  }
+  mix-blend-mode: difference;
 }
 
 /* Dialog */
