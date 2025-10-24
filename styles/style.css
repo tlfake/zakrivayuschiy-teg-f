@@ -11,8 +11,8 @@
 */
 
 .page {
-  width: clamp(23.4375rem, 16.2852rem + 30.5164vw, 43.75rem);
-  min-width: 375px;
+  max-width: 700px;
+  width: 100%;
   margin: 0 auto;
   margin-top: 100px;
   margin-bottom: 100px;
@@ -27,13 +27,13 @@
 
 /* Header */
 .header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  justify-items: center;
+  align-content: center;
   gap: 20px;
   margin-bottom: 100px;
   border: 2px solid var(--text-color);
-  padding: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) 0 25px 0;
+  min-height: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
   font-family: var(--accent-font);
   background-color: var(--bg-color);
 }
@@ -42,6 +42,7 @@
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   text-decoration: none;
   text-transform: uppercase;
+  color: inherit;
 }
 
 .header__logo:focus {
@@ -52,17 +53,18 @@
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   font-weight: 400;
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* Main */
 .main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 50px;
 }
 
 /* Post */
 .post {
+  display: grid;
   border: 2px solid var(--text-color);
   background-color: var(--bg-color);
 }
@@ -116,11 +118,9 @@
 }
 
 .post__content {
-  display: flex;
-  flex-direction: column;
-  gap: 26px;
+  display: grid;
+  gap: 25px;
   padding: 25px;
-  padding-bottom: 22px;
   font-size: 18px;
   line-height: 21px;
   font-variation-settings: 'wght' var(--font-weight-normal);
@@ -129,8 +129,7 @@
 .post__buttons {
   display: flex;
   justify-content: end;
-  gap: 7px;
-  padding-bottom: 3px;
+  gap: 12px;
 }
 
 /* Footer */
