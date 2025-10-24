@@ -24,4 +24,14 @@
   
   /* Ширина контента (резиновая через clamp) */
   --content-width: clamp(375px, 100%, 700px);
+  
+  /* Отступы и размеры */
+  --border-width: 2px;
+  --spacing-small: 25px;
+  --spacing-medium: 50px;
+  --spacing-large: 100px;
+  
+  /* Размеры элементов */
+  --button-min-height: 38px;
+  --card-like-button-width: 130px;
 }
