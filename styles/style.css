@@ -30,7 +30,7 @@
   justify-items: center;
   align-content: center;
   gap: 20px;
-  margin-bottom: var(--spacing-medium);
+  margin-bottom: 98px;
   border: var(--border-width) solid var(--text-color);
   min-height: clamp(20.4375rem, 19.5352rem + 3.8498vw, 23rem);
   font-family: var(--accent-font);
