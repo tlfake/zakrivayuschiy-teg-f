@@ -331,6 +331,7 @@ dialog::backdrop {
 
   .footer__button {
     grid-auto-flow: row;
+    grid-template-columns: 1fr;
   }
 
   .footer__button svg {
