@@ -17,6 +17,7 @@
   margin-block: var(--spacing-large);
   color: var(--text-color);
   font-family: var(--main-font);
+  font-weight: var(--font-weight-normal);
   background-image: var(--bg-gradient);
   background-position: center;
   background-size: cover;
@@ -72,6 +73,7 @@
   padding: 5px 10px;
   font-size: 18px;
   line-height: 22px;
+  font-weight: var(--font-weight-bold);
   font-variation-settings: 'wght' var(--font-weight-bold);
 }
 
@@ -135,16 +137,11 @@
 }
 
 @supports (
-  (
-      (text-stroke: 1px var(--bg-color)) or
-        (-webkit-text-stroke: 1px var(--bg-color))
-    )
-    and (mix-blend-mode: hard-light)
+  (-webkit-text-stroke: 1px var(--bg-color)) and (mix-blend-mode: hard-light)
 ) {
   .post__cover__watermark {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--bg-color);
-    text-stroke: 1px var(--bg-color);
     mix-blend-mode: hard-light;
   }
 }
@@ -155,6 +152,7 @@
   padding: var(--spacing-small);
   font-size: 18px;
   line-height: 21px;
+  font-weight: var(--font-weight-normal);
   font-variation-settings: 'wght' var(--font-weight-normal);
 }
 
@@ -175,7 +173,7 @@
 .card__icon-button {
   position: relative;
   display: grid;
-  align-items: end;
+  place-items: center;
   min-block-size: var(--button-min-height);
   border: var(--border-width) solid transparent;
   padding: 0;
@@ -212,6 +210,7 @@
   position: relative;
   display: grid;
   place-content: center;
+  place-items: center;
   border: var(--border-width) solid var(--text-color);
   background: var(--bg-color);
   transition: box-shadow 0.3s ease;
@@ -221,6 +220,8 @@
 
 .footer__button {
   grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
   gap: 8px;
   min-block-size: 55px;
   padding: 15px 20px;
@@ -247,22 +248,37 @@
   transform: translateX(0);
 }
 
-.button__text {
+.button__text,
+.button svg {
   position: relative;
   z-index: 1;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.button__text {
   font-family: var(--accent-font);
   font-weight: 400;
   font-size: 14px;
   line-height: 90%;
-  color: var(--bg-color);
-  mix-blend-mode: difference;
 }
 
-.button svg {
-  position: relative;
-  z-index: 1;
+.button:hover .button__text,
+.button:hover svg {
   color: var(--bg-color);
-  mix-blend-mode: difference;
+}
+
+@supports (mix-blend-mode: difference) {
+  .button__text,
+  .button svg {
+    color: var(--bg-color);
+    mix-blend-mode: difference;
+  }
+
+  .button:hover .button__text,
+  .button:hover svg {
+    color: var(--bg-color);
+  }
 }
 
 /* Dialog */
