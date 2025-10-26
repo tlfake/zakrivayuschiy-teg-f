@@ -1,40 +1,20 @@
-/* Опишите в этом файле все keyframes для проекта и стили анимаций иконки Like.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
-
-*/
-
-/* Состояние по умолчанию - transitions для возврата к исходному состоянию */
-
-/* Контур - быстрый переход */
 .contour {
   transition: fill 0.1s linear;
 }
 
-/* Основное тело - медленный переход без задержки */
 .main-body {
   transition: fill 0.3s linear;
 }
 
-/* Сердцевина - медленный переход с задержкой */
 .core {
   transition: fill 0.3s linear 0.03s;
 }
 
-/* Состояние :hover - наведение на иконку */
-/* Контур заполняется первым */
 .like-icon:hover .contour {
   fill: var(--text-color);
   transition: fill 0.1s linear;
 }
 
-/* Сердцевина и основное тело заполняются с задержкой */
 .like-icon:hover .core {
   fill: var(--text-color);
   transition: fill 0.3s linear 0.05s;
@@ -45,14 +25,11 @@
   transition: fill 0.3s linear 0.05s;
 }
 
-/* Состояние :active - нажатие и удержание */
-/* Контур заполняется первым */
 .like-icon:active .contour {
   fill: var(--text-color);
   transition: fill 0.1s linear;
 }
 
-/* Сердцевина и основное тело заполняются с задержкой */
 .like-icon:active .core {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.05s;
@@ -63,14 +40,11 @@
   transition: fill 0.3s linear 0.05s;
 }
 
-/* Состояние is-liked - после клика (сохраняется) */
-/* 1. Контур заполняется первым */
 .like-icon.is-liked .contour {
   fill: var(--animation-fill-color);
   transition: fill 0.1s linear;
 }
 
-/* 2. Сердцевина и основное тело заполняются одновременно с небольшой задержкой */
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.03s;
@@ -81,22 +55,18 @@
   transition: fill 0.3s linear 0.03s;
 }
 
-/* Масштабирование сердца от центра */
 .like-icon {
   transform-origin: center;
 }
 
-/* 3. Анимация масштабирования группы heart (после заполнения) */
 .like-icon.is-liked .heart {
   animation: scale-heart 0.3s ease-in 0.1s forwards;
 }
 
-/* 4. Анимация искр (во время масштабирования) */
 .like-icon.is-liked .sparks {
   animation: sparks-animation 0.3s ease-in 0.3s;
 }
 
-/* Keyframes для масштабирования сердца */
 @keyframes scale-heart {
   0% {
     transform: scale(1);
@@ -109,7 +79,6 @@
   }
 }
 
-/* Keyframes для вспышки искр */
 @keyframes sparks-animation {
   0% {
     opacity: 0;

@@ -1,35 +1,20 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
-
 :root {
-  /* Шрифты */
   --main-font: 'Inter-Variable', sans-serif;
   --accent-font: 'PressStart2P', fantasy;
-  
-  /* Веса шрифтов */
   --font-weight-normal: 400;
   --font-weight-bold: 700;
-  
-  /* Цвета */
   --text-color: #000000;
   --bg-color: #ffffff;
-  
-  /* Цвета для анимации */
   --contour-color: var(--text-color);
   --animation-fill-color: #ff0000;
-  
-  /* Градиент для фона */
   --bg-gradient: 
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     repeating-linear-gradient(180deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(180deg, #e7e7e7 0.01%, #1a1a1a 100%);
-  
-  /* Отступы и размеры */
   --border-width: 2px;
   --spacing-small: 25px;
   --spacing-medium: 50px;
   --spacing-large: 100px;
-  
-  /* Размеры элементов */
   --button-min-height: 38px;
   --card-like-button-width: 130px;
 }
